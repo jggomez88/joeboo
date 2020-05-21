@@ -11,6 +11,15 @@ html {
   *:before {
     box-sizing: border-box;
   }
+
+  h1 {
+    font-size: xxx-large; 
+  }
+
+  a {
+    color: #30586b;
+  }
+
   body {
     background:#73cdf7;
     color: #fff;
@@ -37,7 +46,7 @@ html {
   }
 
   #about p {
-    padding: 40px 0;
+    padding: 40px 40px 0 40px;
     line-height: 1.3;
   }
 
