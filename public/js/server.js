@@ -2,7 +2,7 @@ const http = require('http');
 const PORT = process.env.PORT || 1337;
 const express = require('express');
 
-const keys = require('./config');
+const keys = require('../../functions/config');
 const accountSid = keys.accountSid;
 const authToken = keys.authToken;
 
@@ -80,7 +80,8 @@ app.post('/intro', (req, res) => {
         body: `Hey ${req.body.userName}, it's @boo checkin up on you`,
         mediaUrl: ['https://media.giphy.com/media/vi9ob0h5bKmUU/giphy.gif']
       })
-      .then(() => {
+      .then((message) => {
+        console.log(message.status);
         res.send(JSON.stringify({ success: true }));
       })
       .catch(err => {

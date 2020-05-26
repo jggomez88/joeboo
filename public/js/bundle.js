@@ -176,7 +176,6 @@ function showLi(focusInput) {
     200
   );
 
-  console.log(focusInput.closest("li"));
 
   if (focusInput.attr("id") == "viewpswd") {
     $("[data-ref='" + focusInput.attr("id") + "']")
@@ -259,7 +258,7 @@ $( "#signup" ).click(function( e ) {
 
 
 const sendIntro = (user) => {
-  fetch('https://cors-anywhere.herokuapp.com/https://2cb3bbbc.ngrok.io/intro', {
+  fetch('https://us-central1-joeboo-11d25.cloudfunctions.net/sendSMS/intro', {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
@@ -274,25 +273,30 @@ const sendIntro = (user) => {
 
 //Test fetch
 
-// const testUser = 
-// {
-//   userName: 'joe',
-//   phone: '6153057983'
-// }
+// test url 1
+// https://cors-anywhere.herokuapp.com/https://2cb3bbbc.ngrok.io/intro
 
-// console.log(JSON.stringify(testUser));
+const testUser = 
+{
+  userName: 'joe',
+  phone: '6153057983'
+}
 
-// fetch('https://cors-anywhere.herokuapp.com/https://2cb3bbbc.ngrok.io/intro', {
-//     method: "POST",
-//     body: JSON.stringify(testUser),
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-// }).then((res) => {
-//   console.log(res.status);
-// }).catch((error) => {
-//   console.log('Error: ', error);
-// });
+console.log(JSON.stringify(testUser));
+
+fetch('https://us-central1-joeboo-11d25.cloudfunctions.net/sendSMS/intro', {
+    method: "POST",
+    body: JSON.stringify(testUser),
+    headers: {
+      "Content-Type": "application/json"
+    }
+}).then((res) => {
+  console.log(res.status);
+}).catch((error) => {
+  console.log('Error: ', error);
+});
+
+
 
 
 },{}]},{},[1]);
