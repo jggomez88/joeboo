@@ -52,12 +52,11 @@ app.post('/sms', (req, res) => {
 
 app.post('/intro', (req, res) => {
     res.header('Content-Type', 'application/json');
-    console.log(req);
-    client.messages
-      .create({
+
+    return client.messages.create({
         from: '+16507358169',
         to: req.body.phone,
-        body: `Hey ${req.body.userName}, it's @boo checkin up on you`,
+        body: `Hey ${req.body.userName}, it's @boo checkin up on you. Send me text, and see what's next.`,
         mediaUrl: ['https://media.giphy.com/media/vi9ob0h5bKmUU/giphy.gif']
       })
       .then((message) => {

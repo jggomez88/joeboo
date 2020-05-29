@@ -251,7 +251,7 @@ const createUser = () => {
 $( "#signup" ).click(function( e ) {
   const newUser = createUser().newUser;
   console.log(newUser);
-  $(".submit-heading").text("It's official.");
+  $(".submit-heading").text("It's official.").css('font-size', 'xxx-large');
   sendIntro(newUser);
   event.preventDefault();
 });
@@ -273,28 +273,19 @@ const sendIntro = (user) => {
 
 //Test fetch
 
-// test url 1
-// https://cors-anywhere.herokuapp.com/https://2cb3bbbc.ngrok.io/intro
+// // console.log(JSON.stringify(testUser));
 
-const testUser = 
-{
-  userName: 'joe',
-  phone: '6153057983'
-}
-
-console.log(JSON.stringify(testUser));
-
-fetch('https://us-central1-joeboo-11d25.cloudfunctions.net/sendSMS/intro', {
-    method: "POST",
-    body: JSON.stringify(testUser),
-    headers: {
-      "Content-Type": "application/json"
-    }
-}).then((res) => {
-  console.log(res.status);
-}).catch((error) => {
-  console.log('Error: ', error);
-});
+// fetch('https://us-central1-joeboo-11d25.cloudfunctions.net/sendSMS/intro', {
+//     method: "POST",
+//     body: JSON.stringify(testUser),
+//     headers: {
+//       "Content-Type": "application/json"
+//     }
+// }).then((res) => {
+//   console.log(res.status);
+// }).catch((error) => {
+//   console.log('Error: ', error);
+// });
 
 
 

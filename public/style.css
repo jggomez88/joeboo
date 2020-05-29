@@ -223,4 +223,54 @@ html {
       transform: translateY(0);
     }
   }
+
+  #cta {
+    margin-top: 20px;
+    font-size: 32pt;
+    float:right
+  }
   
+
+  @media only screen and (max-width: 600px) {
+    * {
+      max-width: 100%;
+    }
+
+    nav a {
+      display: block;
+      padding: 5px 20px;
+    }
+
+    .container .navigation ol {
+      z-index: unset;
+      width: 85%;
+    }
+
+
+
+    .container .sign-form .questions li {
+      width: 88%;
+    }
+
+    .container .sign-form .questions li input {
+      width: 100%;
+    }
+
+    #about {
+      padding: 40px 5px;
+    }
+
+
+
+    .questions li span {
+      width: 100%;
+    }
+
+    #cta {
+      width:90%;
+      float: none;
+      margin-top:20px;
+    }
+
+ 
+  }
