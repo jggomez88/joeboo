@@ -262,7 +262,7 @@ const createUser = () => {
 
 $( "#signup" ).click(function( e ) {
   const newUser = createUser().newUser;
-  console.log(newUser);
+  // console.log(newUser);
   $(".submit-heading").text("It's official.").css('font-size', 'xxx-large');
   sendIntro(newUser);
   event.preventDefault();
