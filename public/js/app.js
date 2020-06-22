@@ -7,6 +7,10 @@ $(document).ready(function () {
   var erroEle = $(".error-message"),
     focusInput = $(".questions").find(".active");
 
+    // if (focusInput.attr("name") !== "phone") {
+    //   $('#cta').html("");
+    // }
+
   $(".navigation a").click(function () {
     nextMaster("navi");
 
@@ -38,10 +42,11 @@ $(document).ready(function () {
     );
     //                    .RemoveClass('done');
     errorMessage(erroEle, "", "hidden", 0);
+    event.preventDefault();
   });
 
   if (focusInput.val() != "") {
-    $("#next-page").css("opacity", 1);
+    $("#next-page").css({"opacity": 1});
   }
 
   $(document).keypress(function (event) {
@@ -53,11 +58,18 @@ $(document).ready(function () {
     $("#next-page").click(function () {
       var focusInput = $(".questions").find(".active");
       nextMaster("nextpage");
+      event.preventDefault();
     });
   });
 
   function nextMaster(type) {
     var focusInput = $(".questions").find(".active");
+    if (focusInput.attr("name") == "phone") {
+      // $('#cta').html(
+      //   `<a href="#" style="color:#51859e;text-decoration:none" id="signup">Cool. Want to maybe hang out sometime?</a>`
+      // );
+      $('#next-page').css('margin-top','80px')
+    }
     if (focusInput.val() != "") {
       if (
         (focusInput.attr("name") == "name" ||
@@ -92,7 +104,7 @@ $(document).ready(function () {
         );
       } else {
         if (type != "navi") showLi(focusInput);
-        $("#next-page").css("opacity", 0);
+        $("#next-page").css({"opacity": 0});
         errorMessage(erroEle, "", "hidden", 0);
       }
     } else if (type == "keypress") {
